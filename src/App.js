@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { RestritedPage } from './component/RestritedPage';
 
 function App() {
 
@@ -14,9 +15,7 @@ function App() {
         {logged===false?<div>
             <p>Voce não pode acessar esta página, faça Login</p>
             <button onClick={()=>setLogged(true)}>Entrar</button>
-            </div>:<div>
-              <p>Bem vindo Matheus!</p>
-              <button onClick={()=>setLogged(false)}>Sair</button></div>
+            </div>:<RestritedPage setLogged={setLogged}/>
         }
         
       </header>
